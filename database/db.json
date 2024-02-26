@@ -1,0 +1,13 @@
+{"usuarios":[
+    {"id": 1,
+     "nombre": "Santiago Echeverry",
+    "password": "admin1234"},
+    {"id": 2,
+     "nombre": "Carolina Garcia",
+    "password": "admin4321"},
+    {
+    "id": 3,
+     "nombre": "Pedro Pablo",
+    "password": "123456789"
+    }
+]}

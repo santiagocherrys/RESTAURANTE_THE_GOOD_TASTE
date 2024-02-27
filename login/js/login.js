@@ -1,4 +1,6 @@
-console.clear();
+/* importaciones */
+import { getUsers, newUser } from "../../api/api.js";
+
 
 const loginBtn = document.getElementById('login');
 const signupBtn = document.getElementById('signup');
@@ -9,6 +11,11 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const passwordLog = document.getElementById('passwordLog');
 const emailLog = document.getElementById('emailLog');
+
+document.addEventListener('DOMContentLoaded',()=>{
+	/* Borrar los formularios */
+	
+})
 
 /* Evento subir login */
 loginBtn.addEventListener('click', (e) => {
@@ -36,16 +43,70 @@ signupBtn.addEventListener('click', (e) => {
 	});
 });
 
-/* Obtener datos del signup */
-botonSendSingUp.addEventListener('click',()=>{
+/*Agregar usuario*/
+botonSendSingUp.addEventListener('click',async ()=>{
+	
 	console.log("nombre", name1.value);
 	console.log("email", email.value);
 	console.log("password", password.value);
+
+	const usuarioNuevo = {
+		nombre: name1.value,
+		email: email.value,
+		password: password.value
+	}
+
+	/* Se agrega usuario a la base de datos */
+	await newUser(usuarioNuevo);
+	name1.value = "";
+	email.value = "";
+	password.value = "";
+	alert('usuario creado con exito, ahora puede hacer login')
+
+	/*Se borran datos*/
+	
+
+	/* Ir al login */
+	/* loginBtn.click(); */
 })
 
 
-/* Obtener datos del login */
-botonSendLogIn.addEventListener('click',()=>{
+/*login */
+botonSendLogIn.addEventListener('click', async ()=>{
+	const usuarios = await getUsers();
+	console.log("Los usuarios son: ", usuarios);
+
+	/* Se hace filtro */
+
+	const userFiltrado = usuarios.filter(buscarEmail).filter(buscarPassword);
+	console.log("Los usuarios filtrados son:", userFiltrado);
+
+	function buscarEmail(user){
+		if(emailLog.value){
+			return user.email === emailLog.value;
+		}else{
+			return user;
+		}
+	}
+
+	function buscarPassword(user){
+		if(passwordLog.value){
+			return user.password === passwordLog.value;
+		}else{
+			return user;
+		}
+	}
+
+	/* Revisar si un usuario está en la base de datos */
+	if(userFiltrado.length > 0){
+		alert('Usuario registrado, se dirige a vista LANDING PAGE');
+
+	}else{
+		alert('Usuario o contraseña incorrecta, ingrese de nuevo credenciales');
+		emailLog.value = "";
+		passwordLog.value = "";
+	}
+
 	console.log("email Log: ", emailLog.value);
 	console.log("password Log: ", passwordLog.value);
 })

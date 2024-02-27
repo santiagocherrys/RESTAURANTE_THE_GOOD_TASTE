@@ -1,13 +1,39 @@
-{"usuarios":[
-    {"id": 1,
-     "nombre": "Santiago Echeverry",
-    "password": "admin1234"},
-    {"id": 2,
-     "nombre": "Carolina Garcia",
-    "password": "admin4321"},
+{
+  "usuarios": [
     {
-    "id": 3,
-     "nombre": "Pedro Pablo",
-    "password": "123456789"
+      "id": 1,
+      "nombre": "Santiago Echeverry",
+      "email": "santiago@hotmail.com",
+      "password": "admin1234"
+    },
+    {
+      "id": 2,
+      "nombre": "Carolina Garcia",
+      "email": "carolina@hotmail.com",
+      "password": "admin4321"
+    },
+    {
+      "id": 3,
+      "nombre": "Pedro Pablo",
+      "password": "123456789"
+    },
+    {
+      "id": "14d7",
+      "nombre": "sadsf",
+      "email": "adsfd@hotmail.com",
+      "password": "asdfads"
+    },
+    {
+      "id": "df3f",
+      "nombre": "sadsf",
+      "email": "adsfd@hotmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "213b",
+      "nombre": "sadsf",
+      "email": "adsfd@hotmail.com",
+      "password": "asdfa"
     }
-]}
+  ]
+}

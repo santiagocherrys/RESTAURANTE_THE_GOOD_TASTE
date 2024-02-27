@@ -50,24 +50,34 @@ botonSendSingUp.addEventListener('click',async ()=>{
 	console.log("email", email.value);
 	console.log("password", password.value);
 
-	const usuarioNuevo = {
-		nombre: name1.value,
-		email: email.value,
-		password: password.value
+	/* Se chequea si algun campo está vacio */
+
+	if(name1.value == "" || email.value == "" || password.value == ""){
+		/* Si algun campo no se ha llenado */
+		alert('falta algun campo por llenar');
+	}else{
+		/* Se crea usuario */
+		const usuarioNuevo = {
+			nombre: name1.value,
+			email: email.value,
+			password: password.value
+		}
+	
+		/* Se agrega usuario a la base de datos */
+		await newUser(usuarioNuevo);
+		name1.value = "";
+		email.value = "";
+		password.value = "";
+		alert('usuario creado con exito, ahora puede hacer login')
+		/* Ir al login */
+		loginBtn.click();
 	}
 
-	/* Se agrega usuario a la base de datos */
-	await newUser(usuarioNuevo);
-	name1.value = "";
-	email.value = "";
-	password.value = "";
-	alert('usuario creado con exito, ahora puede hacer login')
-
-	/*Se borran datos*/
 	
 
-	/* Ir al login */
-	/* loginBtn.click(); */
+	
+
+	
 })
 
 
@@ -76,38 +86,48 @@ botonSendLogIn.addEventListener('click', async ()=>{
 	const usuarios = await getUsers();
 	console.log("Los usuarios son: ", usuarios);
 
-	/* Se hace filtro */
-
-	const userFiltrado = usuarios.filter(buscarEmail).filter(buscarPassword);
-	console.log("Los usuarios filtrados son:", userFiltrado);
-
-	function buscarEmail(user){
-		if(emailLog.value){
-			return user.email === emailLog.value;
-		}else{
-			return user;
-		}
-	}
-
-	function buscarPassword(user){
-		if(passwordLog.value){
-			return user.password === passwordLog.value;
-		}else{
-			return user;
-		}
-	}
-
-	/* Revisar si un usuario está en la base de datos */
-	if(userFiltrado.length > 0){
-		alert('Usuario registrado, se dirige a vista LANDING PAGE');
-
-	}else{
-		alert('Usuario o contraseña incorrecta, ingrese de nuevo credenciales');
-		emailLog.value = "";
-		passwordLog.value = "";
-	}
-
 	console.log("email Log: ", emailLog.value);
 	console.log("password Log: ", passwordLog.value);
+	if(emailLog.value == "" || passwordLog.value == ""){
+		/* Si algun campo no se ha llenado */
+		alert('falta algun campo por llenar');
+	}else{
+			/* Se busca usuario */
+
+			/* Se hace filtro */
+
+		const userFiltrado = usuarios.filter(buscarEmail).filter(buscarPassword);
+		console.log("Los usuarios filtrados son:", userFiltrado);
+
+		function buscarEmail(user){
+			if(emailLog.value){
+				return user.email === emailLog.value;
+			}else{
+				return user;
+			}
+		}
+
+		function buscarPassword(user){
+			if(passwordLog.value){
+				return user.password === passwordLog.value;
+			}else{
+				return user;
+			}
+		}
+
+		/* Revisar si un usuario está en la base de datos */
+		if(userFiltrado.length > 0){
+			alert('Usuario registrado, se dirige a vista LANDING PAGE');
+
+		}else{
+			alert('Usuario o contraseña incorrecta, ingrese de nuevo credenciales');
+			emailLog.value = "";
+			passwordLog.value = "";
+		}
+
+	}
+	
+
+	
 })
 

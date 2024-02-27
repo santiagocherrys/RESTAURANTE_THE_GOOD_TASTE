@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+}
+
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.restaurant-info {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.restaurant-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.restaurant-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.image-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/2284166/pexels-photo-2284166.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
+    background-position: center;
+}
+
+.restaurant-info {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    border-radius: 10px;
+    text-align: center;
+}
+
+#logout-btn,
+#gallery-menu-btn {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    margin: 10px; /* Margen entre botones */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+#logout-btn:hover,
+#gallery-menu-btn:hover {
+    background-color: #45a049; /* Cambiar color de fondo al pasar por encima */
+}

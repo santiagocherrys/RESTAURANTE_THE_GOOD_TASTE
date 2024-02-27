@@ -118,7 +118,7 @@ botonSendLogIn.addEventListener('click', async ()=>{
 		/* Revisar si un usuario está en la base de datos */
 		if(userFiltrado.length > 0){
 			alert('Usuario registrado, se dirige a vista LANDING PAGE');
-			window.location.href = "/RESTAURANTE_THE_GOOD_TASTE/landing-page/landing.html";
+			window.location.href = "/landing-page/landing.html";
 
 		}else{
 			alert('Usuario o contraseña incorrecta, ingrese de nuevo credenciales');

@@ -1,19 +1,19 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Santiago Echeverry",
       "email": "santiago@hotmail.com",
       "password": "admin1234"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Carolina Garcia",
       "email": "carolina@hotmail.com",
       "password": "admin4321"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Pedro Pablo",
       "password": "123456789"
     },
@@ -34,6 +34,18 @@
       "nombre": "sadsf",
       "email": "adsfd@hotmail.com",
       "password": "asdfa"
+    },
+    {
+      "id": "2692",
+      "nombre": "Hola",
+      "email": "asfsdfa@gmail.com",
+      "password": "admin1234"
+    },
+    {
+      "id": "ea37",
+      "nombre": "usuario2",
+      "email": "usuario2@gmail.com",
+      "password": "admin4321"
     }
   ]
 }
